@@ -1,0 +1,29 @@
+create table customers (
+ customer_id int not null primary key,
+ customer_name varchar(50) not null,
+ email varchar(50),
+ shipping_addres varchar(80)
+);
+
+create table orders (
+ order_id int not null primary key,
+ customer_id int not null,
+ order_date date not null,
+ total_amount decimal not null
+);
+
+create table orders_details (
+ order_detail_id int not null primary key,
+ order_id int not null,
+ product_id int not null,
+ qty int not null,
+ order_price decimal not null
+);
+
+create table products (
+ product_id int not null primary key,
+ product_name varchar(50) not null,
+ description varchar(80),
+ price decimal not null,
+ stock_quantity int
+);
